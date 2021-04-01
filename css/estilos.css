@@ -1,0 +1,202 @@
+/*----------------------Colores-----------------------------------*/
+:root{
+    --primary:rgb(54, 54, 54);
+    --secondary:rgb(218, 100, 22);
+    --secondaryHover:rgb(219, 135, 79);
+    --secondaryBackground:rgb(250, 243, 233);
+    --light:rgb(250, 243, 233);
+    --morado:#902475;
+    --azul:#2d85b0;
+}
+/*----------------------Fuentes-----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+/*----------------------Estilos generales-----------------------------------*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+body{
+    padding: 0;
+    background-color: var(--secondaryBackground);
+    width: 100%;
+    overflow-x: hidden;
+}
+img{
+    width: max-content;
+    object-fit: cover;
+}
+p{
+    line-height: 25px;
+}
+.container{
+    max-width: 9000px;
+    width: 90%;
+    margin: auto;
+}
+.header{
+
+}
+/*----------------------Menú-----------------------------------*/
+.menu__icon{
+    font-size: 1.5em;
+    background-color: var(--secondary);
+    padding: 8px 10px;
+    border-radius: 15%;
+    margin-left: 5px;
+    color: var(--light);
+}
+.menu__icon:hover{
+    background-color: var(--secondaryHover);
+}
+.menu{
+    position: fixed;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 100px;
+    left: 50%;
+    transform: translateX(50%);
+    background-color:var(--light);
+    transition: .5s;
+    z-index: 9;
+}
+.menu__item{
+    list-style:none ;
+    padding: 0;
+
+}
+.menu__link{
+    display: block;
+    text-decoration: none;
+    font-weight: 100;
+    color: var(--secondary);
+    background-color: var(--light);
+    width: 100%;
+    padding: 25px 30px;
+    margin: 0;
+    text-align: left;
+    font-size: 1.2em;
+    transition: .5s;
+    border-radius: 3px 0 0 10px;
+    
+}
+.menu__link:hover{
+    color: var(--light);
+    background-color: var(--secondary);
+}
+.menu__link>i{
+    font-size: 1.2em;
+    width: 40px;
+}
+.menu__link--active{
+    color: var(--light);
+    background-color: var(--secondary);    
+}
+.nav__box{
+    position: fixed;
+    padding: 10px 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--light);
+    width: 100%;
+    border-bottom: solid 2px var(--secondaryHover);
+}
+.nav__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.nav__logo{
+  height: 80px;
+  width: auto;
+}
+.nav-show{
+    transform: translateX(-50%) scaleX(1);
+}
+.menu2{
+    display: none;
+    visibility: hidden;
+}
+/*----------------------Responsive Tablet-----------------------------------*/
+@media screen and (min-width:768px){
+
+
+}
+/*----------------------Responsive Desktop-----------------------------------*/
+@media screen and (min-width:1024px){
+    .menu__icon{
+        display: none;
+        visibility: hidden;
+    }
+    .menu{
+        transform: scale(1) translateX(0%);
+        width: max-content;
+        height: max-content;
+        position: static;
+        background-color: transparent;
+    }
+    
+    .menu__item{
+        display: inline-flex;
+    }
+    .menu__link{
+        display: inherit;
+        width: max-content;
+        padding: 8px 5px;
+        background-color: transparent;
+        font-size: 1em;
+        transition: all .5s;
+        border-bottom: none;
+        padding-bottom: 4px;
+        padding: 15px 10px;
+        border-radius: 3px 0 0 10px;
+    }
+    .menu__link:hover{
+        
+    }
+    .menu__link--active{
+        background-color: var(--secondary);
+    }
+    .menu__link--active:hover{
+        background-color: var(--secondaryHover);
+    }
+    .menu2{
+        position:absolute;
+        background-color: var(--secondaryBackground);
+        top: 102px;
+        width: 100%;
+        padding: 0;
+        left: 0;
+        transform: scale(0);
+        transition: all .5s;
+        visibility: visible;
+        display: block;
+    }
+    .menu2--container{
+        max-width: 9000px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .menu__item2{
+        display: inline-flex;
+    }
+    .menu__link2{
+        text-decoration: none;
+        color: var(--dark);
+        padding: 10px;
+    }
+    .nav-show2{
+        transform: translateX(0%) scaleY(1);
+    }
+}
