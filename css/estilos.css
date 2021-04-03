@@ -26,6 +26,9 @@ body{
     background-color: var(--secondaryBackground);
     width: 100%;
     overflow-x: hidden;
+    height: 100vh;
+    position: relative;
+    z-index: -99;
 }
 img{
     width: max-content;
@@ -102,6 +105,7 @@ p{
     position: fixed;
     padding: 10px 0;
     left: 50%;
+    top: 0;
     transform: translateX(-50%);
     background-color: var(--light);
     width: 100%;
@@ -125,6 +129,69 @@ p{
 .menu2{
     display: none;
     visibility: hidden;
+}
+/*----------------------Principal Section-----------------------------------*/
+.notices{
+position: relative;
+top: 500px;
+margin: 30px auto;
+z-index: -9;
+}
+.copy-title{
+    color: var(--secondary);
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-height: 533px;
+}
+.card{
+    background:linear-gradient(180deg,var(--secondaryHover) 0%, var(--light) 100%);
+    height: max-content;
+    padding:30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card__img{
+    height: 230px;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+    margin-bottom: 20px;
+}
+.card__subtitle{
+    color: var(--gold2);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.point{
+    color: var(--gold2);
+}
+.card__title{
+    font-size: 2em;
+    color: var(--dark);
+    margin: 0px auto 10px;
+}
+.card__txt{
+    text-align: justify;
+    color:var(--dark);
+}
+.card__link{
+    display: block;
+    color: var(--black);
+    background-color: var(--secondaryHover);
+    text-decoration: none;
+    padding: 15px 23px;
+    width: max-content;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: all .5s;
+}
+.card__link:hover{
+    background-color: var(--black);
+    color: var(--secondaryHover);
 }
 /*----------------------Responsive Tablet-----------------------------------*/
 @media screen and (min-width:768px){
@@ -199,4 +266,11 @@ p{
     .nav-show2{
         transform: translateX(0%) scaleY(1);
     }
+    .notices{
+        top: 750px;
+    }
+    .card{
+        width: 32%;
+    }
+
 }

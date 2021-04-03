@@ -2,7 +2,7 @@
     margin: auto;
     overflow: hidden;
     position: absolute;
-    top: 100px;
+    top: 75px;
     z-index: -9;
 }
 .slider{
@@ -21,8 +21,8 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.281);
-    z-index: 9;
+    background-color: rgba(48, 31, 15, 0.411);
+    z-index: 4;
 }
 .slider__img{
     display: block;
@@ -55,7 +55,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     transition: all 0.4s;
-    z-index: 9999999;
+    z-index: 99999;
 }
 .slider__btn--right{
     right: 0;
@@ -84,6 +84,9 @@
     margin-bottom:30px;
     font-weight: 200;
 }
+.img-3{
+    object-position: right;
+}
 @media screen and (min-width:768px){
     .slider{
         height: 350px;
@@ -91,6 +94,12 @@
     .slider__txt{
         font-size: 1.5em;
     } 
+    .img-2{
+        object-position: top;
+    }
+    .img-3{
+        object-position: top;
+    }
 }
 @media screen and (min-width:1024px){
     .slider{

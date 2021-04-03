@@ -35,6 +35,6 @@ function Prev(){
 btnLeft.addEventListener('click',()=>{
     Prev();
 });
- setInterval (async function(){
+setInterval (async function(){
     await Next();
-},6000);
+},6000); 
