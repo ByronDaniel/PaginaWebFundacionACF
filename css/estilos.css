@@ -1,11 +1,11 @@
 /*----------------------Colores-----------------------------------*/
 :root{
     --primary:rgb(54, 54, 54);
-    --secondary:rgb(218, 100, 22);
+    --secondary:#fb8840;
     --secondaryHover:rgb(219, 135, 79);
-    --secondaryBackground:rgb(250, 243, 233);
-    --light:rgb(250, 243, 233);
-    --morado:#902475;
+    --secondaryBackground:#ffffff;
+    --light:rgb(253, 253, 253);
+    --morado:#66385f;
     --azul:#2d85b0;
 }
 /*----------------------Fuentes-----------------------------------*/
@@ -43,8 +43,10 @@ p{
     margin: auto;
 }
 .header{
-
+    position: relative;
+    z-index: -10;
 }
+
 /*----------------------Menú-----------------------------------*/
 .menu__icon{
     font-size: 1.5em;
@@ -62,12 +64,12 @@ p{
     padding: 0;
     width: 100vw;
     height: 100vh;
-    top: 100px;
+    top: 105px;
     left: 50%;
     transform: translateX(50%);
     background-color:var(--light);
     transition: .5s;
-    z-index: 9;
+    z-index: 9999;
 }
 .menu__item{
     list-style:none ;
@@ -81,13 +83,12 @@ p{
     color: var(--secondary);
     background-color: var(--light);
     width: 100%;
-    padding: 25px 30px;
+    padding: 10px 30px;
     margin: 0;
     text-align: left;
     font-size: 1.2em;
     transition: .5s;
-    border-radius: 3px 0 0 10px;
-    
+    border-bottom: solid 1px var(--secondary);
 }
 .menu__link:hover{
     color: var(--light);
@@ -103,6 +104,7 @@ p{
 }
 .nav__box{
     position: fixed;
+    z-index: 9999999;
     padding: 10px 0;
     left: 50%;
     top: 0;
@@ -130,15 +132,98 @@ p{
     display: none;
     visibility: hidden;
 }
+/*----------------------Carousel-----------------------------------*/
+.carousel{
+    
+}
+.carousel__contenedor{
+    position: relative;
+    margin-top: 106px;
+}
+.carousel__elemento img{
+    height: 300px;
+}
+.btn-carousel{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%) scale(1,1.2);
+    z-index: 9;
+    background-color: transparent;
+    font-size: 2em;
+    color: var(--light);
+    text-shadow: 0px 2px 5px black;
+    cursor: pointer;
+    transition: scale .5s;
+    outline: none;
+    margin: 5px;
+}
+.btn-carousel:hover{
+    transform:translateY(-50%) scale(1.1,1.3);
+    text-shadow: 0px 2px 7px black;
+    color: var(--secondary);
+}
+.carousel__siguiente{
+    right: 0%;
+}
+.carousel__indicadores{
+    position: absolute;
+    bottom: 10px;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.carousel__elemento{
+    position: relative;
+}
+.carousel__txt{
+    position: absolute;
+    left: 50%;
+    bottom: 45px;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.3em;
+    color: var(--light);
+    text-shadow: 0px 2px 2px var(--primary);
+}
+.glider-dot{
+    background-color:  var(--light) !important;
+
+}
+.active{
+    background-color:  var(--secondary) !important;
+}
+.carousel__elemento{
+    position: relative;
+    background-color: black;
+}
+.carousel__elemento{
+    position: relative;
+    background-color: black;
+}
+.carousel__elemento::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.233);
+    width: 100%;
+    height: 100%;
+}
+
 /*----------------------Principal Section-----------------------------------*/
 .notices{
 position: relative;
-top: 500px;
-margin: 30px auto;
-z-index: -9;
+margin: 20px auto;
+z-index: -99000;
 }
 .copy-title{
     color: var(--secondary);
+    font-size: 2em;
 }
 .cards{
     display: flex;
@@ -147,29 +232,24 @@ z-index: -9;
     max-height: 533px;
 }
 .card{
-    background:linear-gradient(180deg,var(--secondaryHover) 0%, var(--light) 100%);
+    background:var(--light);
     height: max-content;
-    padding:30px;
+    padding:15px;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.404);
+    margin: 20px auto;
 }
 .card__img{
-    height: 230px;
+    height: 170px;
     width: 100%;
     border-radius: 10px 0 0 10px;
     margin-bottom: 20px;
 }
-.card__subtitle{
-    color: var(--gold2);
-    font-size: 1.2em;
-    font-weight: 500;
-}
-.point{
-    color: var(--gold2);
-}
+
 .card__title{
     font-size: 2em;
-    color: var(--dark);
+    color: var(--secondary);
     margin: 0px auto 10px;
 }
 .card__txt{
@@ -178,8 +258,9 @@ z-index: -9;
 }
 .card__link{
     display: block;
-    color: var(--black);
-    background-color: var(--secondaryHover);
+    color: var(--light);
+    background-color: var(--primary);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.404);
     text-decoration: none;
     padding: 15px 23px;
     width: max-content;
@@ -188,11 +269,13 @@ z-index: -9;
     border-radius: 7px;
     font-weight: 600;
     transition: all .5s;
+    margin-top: 30px;
 }
 .card__link:hover{
-    background-color: var(--black);
-    color: var(--secondaryHover);
+    background-color: var(--light);
+    color: var(--primary);
 }
+
 /*----------------------Responsive Tablet-----------------------------------*/
 @media screen and (min-width:768px){
 
@@ -214,24 +297,24 @@ z-index: -9;
     
     .menu__item{
         display: inline-flex;
+
     }
     .menu__link{
         display: inherit;
         width: max-content;
-        padding: 8px 5px;
         background-color: transparent;
         font-size: 1em;
         transition: all .5s;
         border-bottom: none;
-        padding-bottom: 4px;
-        padding: 15px 10px;
-        border-radius: 3px 0 0 10px;
+        padding: 7px 10px;
     }
     .menu__link:hover{
         
     }
     .menu__link--active{
         background-color: var(--secondary);
+        border-radius: 3px 0 0 10px;
+
     }
     .menu__link--active:hover{
         background-color: var(--secondaryHover);
@@ -266,11 +349,15 @@ z-index: -9;
     .nav-show2{
         transform: translateX(0%) scaleY(1);
     }
-    .notices{
-        top: 750px;
-    }
     .card{
-        width: 32%;
+        width: 31%;
     }
+    .carousel__elemento img{
+        height: 500px;
+    }
+    .carousel__img{
+        position: relative;
+        height: 500px;
 
+    }
 }
